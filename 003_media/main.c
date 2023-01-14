@@ -2,23 +2,24 @@
 
 // #define N 3
 
-// float media(int *vet) {
-//     float soma = 0;
-//     for (int i = 0; i < N; i++) {
+// float media(int n, int *vet) {
+//     int i;
+//     float soma = 0.0;
+//     for (i = 0; i < N; i++) {
 //         soma += vet[i];
 //     }
 //     return soma / N;
 // }
 
 // int main(void) {
-//     int vet[N];
+//     int vet[N], i;
 
-//     for (int i = 0; i < N; i++) {
+//     for (i = 0; i < N; i++) {
 //         printf("Numero %d: ", i + 1);
 //         scanf("%d", &vet[i]);
 //     }
     
-//     printf("Media: %.2f", media(&vet));
+//     printf("Media: %.2f", media(N, vet));
     
     
 //     return 0;
