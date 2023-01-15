@@ -36,6 +36,29 @@ TLista* insere_fim (TLista *li, int n) {
 	return li;
 }
 
+TLista* insere_ordenado (TLista *li, int n) {
+	TLista *novo;
+	TLista *ant = NULL;
+	TLista *p = li;
+	// procura posicao para insercao
+	while (p != NULL && p->info < n) {
+		ant = p;
+		p = p->prox;
+	}
+	// cria novo elemento
+	novo = (TLista*)malloc(sizeof(TLista));
+	novo->info = n;
+	// encadeia elemento
+	if (ant == NULL) {
+		novo->prox = li;
+		li = novo;
+	} else {
+		novo->prox = ant->prox;
+		ant->prox = novo;
+	}
+	return li;
+}
+
 void imprime_lista(TLista *li) {
 	TLista *p;
 	for (p = li; p != NULL; p = p->prox) {
