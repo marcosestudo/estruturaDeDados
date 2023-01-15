@@ -59,6 +59,22 @@ TLista* insere_ordenado (TLista *li, int n) {
 	return li;
 }
 
+TLista insere_fim_recursivo(TLista *li, int n) {
+	TLista *novo = (TLista*)malloc(sizeof(TLista));
+	novo->info = n;
+	novo->prox = NULL;
+	if (li == NULL) {
+		li = novo;
+	} else {
+		if (li->prox == NULL) {
+			li->prox = novo;
+		} else {
+			insere_fim_recursivo(li->prox, n);
+		}
+	}
+	return li;
+}
+
 void imprime_lista(TLista *li) {
 	TLista *p;
 	for (p = li; p != NULL; p = p->prox) {
