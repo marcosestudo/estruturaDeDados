@@ -110,7 +110,7 @@ void imprime_lista(TLista *li) {
 int main(void) {
 	TLista *L;
 
-	L = cria_lista;
+	L = cria_lista();
     
   	return 0;
 }
