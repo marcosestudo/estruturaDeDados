@@ -18,6 +18,13 @@ TLista* insere_inicio(TLista *li, int n) {
 	return novo;
 }
 
+void imprime_lista(TLista *li) {
+	TLista *p;
+	for (p = li; p != NULL; p = p->prox) {
+		printf("|%d|| ", p->info);
+	}
+}
+
 int main(void) {
 	Tlista *L;
 
