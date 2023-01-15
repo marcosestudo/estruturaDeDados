@@ -1,28 +1,28 @@
-// #include <stdio.h>
-// #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-// #define N 3
+#define N 3
 
-// int main(void) {
-//     int *vet, i;
+int main(void) {
+    int *vet, i;
     
-//     vet = (int*)malloc(N * sizeof(int));
+    vet = (int*)malloc(N * sizeof(int));
     
-//     if (vet == NULL) {
-//         printf("Memoria insuficiente\n");
-//         exit(1);
-//     }
+    if (vet == NULL) {
+        printf("Memoria insuficiente\n");
+        exit(1);
+    }
     
-//     for (i = 0; i < N; i++) {
-//         printf("Numero %d: ", i + 1);
-//         scanf("%d", &vet[i]);
-//     }
+    for (i = 0; i < N; i++) {
+        printf("Numero %d: ", i + 1);
+        scanf("%d", &vet[i]);
+    }
     
-//     for (i = 0; i < N; i++) {
-//         printf("%d ", vet[i]);
-//     }
+    for (i = 0; i < N; i++) {
+        printf("%d ", vet[i]);
+    }
 
-//     free(vet);
+    free(vet);
 
-//     return 0;
-// }
+    return 0;
+}
