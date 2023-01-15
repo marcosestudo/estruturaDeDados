@@ -18,6 +18,24 @@ TLista* insere_inicio(TLista *li, int n) {
 	return novo;
 }
 
+TLista* insere_fim (TLista *li, int n) {
+	TLista *novo = (TLista*)malloc(sizeof(TLista));
+	novo->info = n;
+	novo->prox = NULL;
+	TLista *p = li;
+	TLista *ant = li;
+	while (p != NULL) {
+		ant = p;
+		p = p->prox;
+	}
+	if (ant != NULL) {
+		ant->prox = novo;
+	} else {
+		li = novo;
+	}
+	return li;
+}
+
 void imprime_lista(TLista *li) {
 	TLista *p;
 	for (p = li; p != NULL; p = p->prox) {
