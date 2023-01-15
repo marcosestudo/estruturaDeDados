@@ -12,7 +12,7 @@ TLista* cria_lista(void) {
 }
 
 TLista* insere_inicio(TLista *li, int n) {
-	TLista *novo = (TLista*)malloc(sizeof(Tlista));
+	TLista *novo = (TLista*)malloc(sizeof(TLista));
 	novo->info = n;
 	novo->prox = li;
 	return novo;
@@ -59,7 +59,7 @@ TLista* insere_ordenado (TLista *li, int n) {
 	return li;
 }
 
-TLista insere_fim_recursivo(TLista *li, int n) {
+TLista* insere_fim_recursivo(TLista *li, int n) {
 	TLista *novo = (TLista*)malloc(sizeof(TLista));
 	novo->info = n;
 	novo->prox = NULL;
@@ -76,11 +76,11 @@ TLista insere_fim_recursivo(TLista *li, int n) {
 }
 
 TLista* insere_ordenado_recursivo(TLista *li, TLista *ant, int n) {
-	TLista *novo = (TLista)malloc(sizeof(TLista));
+	TLista *novo = (TLista*)malloc(sizeof(TLista));
 	novo->info;
 	if (li == NULL) {
 		li = novo;
-		novo->prox = NULL
+		novo->prox = NULL;
 	} else {
 		if (li->info > n) {
 			novo->prox = li;
@@ -93,7 +93,7 @@ TLista* insere_ordenado_recursivo(TLista *li, TLista *ant, int n) {
 				li->prox = novo;
 				novo->prox = NULL;
 			} else {
-				insere_orenado_recursivo(li->prox, li, n);
+				insere_ordenado_recursivo(li->prox, li, n);
 			}
 		}
 	}
@@ -108,7 +108,7 @@ void imprime_lista(TLista *li) {
 }
 
 int main(void) {
-	Tlista *L;
+	TLista *L;
 
 	L = cria_lista;
     
