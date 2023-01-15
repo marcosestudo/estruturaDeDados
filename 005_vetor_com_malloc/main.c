@@ -8,6 +8,11 @@
     
 //     vet = (int*)malloc(N * sizeof(int));
     
+//     if (vet == NULL) {
+//         printf("Memoria insuficiente\n");
+//         exit(1);
+//     }
+    
 //     for (i = 0; i < N; i++) {
 //         printf("Numero %d: ", i + 1);
 //         scanf("%d", &vet[i]);
