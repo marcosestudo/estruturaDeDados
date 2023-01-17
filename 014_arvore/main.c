@@ -25,6 +25,14 @@ void profundidade(TNoA *a) {
     }
 }
 
+void simetrica(TNoA *a) {
+    if (a != NULL) {
+        simetrica(a->esq);
+        printf("%c\n", a->info);
+        simetrica(a->dir);
+    }
+}
+
 void imprime(TNoA *no, int tab) {
     for (int i = 0; i < tab; i++) {
         printf("-");
