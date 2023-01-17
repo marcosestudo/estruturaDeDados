@@ -33,6 +33,14 @@ void simetrica(TNoA *a) {
     }
 }
 
+void posOrdem(TNoA *a) {
+    if (a != NULL) {
+        posOrdem(a->esq);
+        posOrdem(a->dir);
+        printf("%c\n", a->info);
+    }
+}
+
 void imprime(TNoA *no, int tab) {
     for (int i = 0; i < tab; i++) {
         printf("-");
