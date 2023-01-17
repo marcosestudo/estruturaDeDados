@@ -17,6 +17,14 @@ TNoA *criaNo(char ch) {
     return novo;
 }
 
+void profundidade(TNoA *a) {
+    if (a != NULL) {
+        printf("%c\n", a->info);
+        profundidade(a->esq);
+        profundidade(a->dir);
+    }
+}
+
 void imprime(TNoA *no, int tab) {
     for (int i = 0; i < tab; i++) {
         printf("-");
