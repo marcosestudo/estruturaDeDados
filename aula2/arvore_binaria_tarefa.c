@@ -32,19 +32,27 @@ TNoA *criaNo(char ch) {
     return novo;
 }
 
-void simetrica(TNoA *nodo){
-     if (nodo!= NULL){
-          simetrica(nodo->esq);
-          printf("%c ",nodo->info);
-          simetrica(nodo->dir);
+void profundidade(TNoA* a){
+     if (a!= NULL){
+          printf("%c ",a->info);
+          profundidade(a->esq);
+          profundidade(a->dir);
       }
 }
 
-void pos_ordem(TNoA *nodo){
-     if (nodo!= NULL){
-          pos_ordem(nodo->esq);
-          pos_ordem(nodo->dir);
-          printf("%c ",nodo->info);
+void simetrica(TNoA *a){
+     if (a!= NULL){
+          simetrica(a->esq);
+          printf("%c ",a->info);
+          simetrica(a->dir);
+      }
+}
+
+void posOrdem(TNoA *a){
+     if (a!= NULL){
+          posOrdem(a->esq);
+          posOrdem(a->dir);
+          printf("%c ",a->info);
       }
 }
 
@@ -63,5 +71,5 @@ int main(void) {
     
     printf("\n");
     printf("Pós-ordem: ");
-    pos_ordem(raiz);
+    posOrdem(raiz);
 };
