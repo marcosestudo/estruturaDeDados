@@ -20,6 +20,10 @@ TNoA *criaNo(char ch) {
 int main(void) {
     TNoA *raiz;
     raiz = criaNo('A');
+    raiz->esq = criaNo('B');
+    raiz->dir = criaNo('C');
+    raiz->dir->esq = criaNo('D');
+    raiz->dir->dir = criaNo('E');
 
     printf("Fim");
     return 0;
