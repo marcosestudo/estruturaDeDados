@@ -73,8 +73,18 @@ TNoA* insere(TNoA *no, int chave) {
     } else if (chave > (no->chave)) {
         no->dir = insere(no->dir, chave);
     } else {
-        printf("Inserção inválida"); // chave já existe
+        printf("Inserção inválida!"); // chave já existe
         exit(1);
     }
     return no;
+}
+
+void criaArvoreBalanceada (TNoA *raiz, int v[], int inicio, int fim) {
+    if (inicio <= fim) {
+        int meio = (inicio + fim) / 2;
+        raiz = insere (raiz, v[meio]);
+        //constroi subárvores esquerda e direita
+        criaArvoreBalanceada(raiz, v, inicio, meio - 1);
+        criaArvoreBalanceada(raiz, v, meio + 1, fim);
+    }
 }
