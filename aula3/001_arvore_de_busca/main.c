@@ -62,3 +62,19 @@ TNoA* buscaRecursiva(TNoA *no, int chave) {
     }    
 }
 
+TNoA* insere(TNoA *no, int chave) {
+    if (no == NULL) {
+        no = (TNoA *)malloc(sizeof(TNoA));
+        no->chave = chave;
+        no->esq = NULL;
+        no->dir = NULL;
+    } else if (chave < (no->chave)) {
+        no->esq = insere(no->esq, chave);
+    } else if (chave > (no->chave)) {
+        no->dir = insere(no->dir, chave);
+    } else {
+        printf("Inserção inválida"); // chave já existe
+        exit(1);
+    }
+    return no;
+}
