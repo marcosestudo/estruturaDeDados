@@ -53,15 +53,12 @@ TNoA* busca(TNoA *no, int chave) {
 TNoA* buscaRecursiva(TNoA *no, int chave) {
     if (no == NULL) {
         return NULL;
+    } else if (no->chave == chave) {
+      	return no;
+    } else if (no->chave > chave) {
+      	return buscaRecursiva (no->esq, chave);
     } else {
-        if (no->chave == chave) {
-                return no;
-        } else {
-            if (no->chave > chave) {
-                return buscaRecursiva (no->esq, chave);
-            } else {
-                return buscaRecursiva (no->dir, chave);
-            }
-        }
-    }
+      	return buscaRecursiva (no->dir, chave);
+    }    
 }
+
