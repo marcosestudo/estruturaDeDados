@@ -88,3 +88,14 @@ void criaArvoreBalanceada (TNoA *raiz, int v[], int inicio, int fim) {
         criaArvoreBalanceada(raiz, v, meio + 1, fim);
     }
 }
+
+int main (void) {
+    int tam = 7;
+    int v[] = {150, 300, 400, 500, 700, 800, 900};
+    TNoA *raiz;
+    raiz = NULL;
+    criaArvoreBalanceada(raiz, v, 0, tam - 1);
+    imprime(raiz, 0);
+    
+    return 0;
+}
