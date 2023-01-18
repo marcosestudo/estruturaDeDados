@@ -24,32 +24,6 @@ TNoA* busca(TNoA *no, int chave) {
     return NULL; // não achou, retorna null
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct sNoA {
-    char info;
-    int chave;
-    struct sNoA *esq;
-    struct sNoA *dir;
-} TNoA;
-
-TNoA* busca(TNoA *no, int chave) {
-    // recebe endereço da raiz e chave procurada
-    while (no != NULL) {
-        if (no->chave == chave) {
-            return no; // achou, retorna o ponteiro pro nó
-        } else {
-            if (no->chave > chave) {
-                no = no->esq;
-            } else {
-                no = no->dir;
-            }
-        }
-    }
-    return NULL; // não achou, retorna null
-}
-
 TNoA* buscaRecursiva(TNoA *no, int chave) {
     if (no == NULL) {
         return NULL;
@@ -79,7 +53,7 @@ TNoA* insere(TNoA *no, int chave) {
     return no;
 }
 
-void criaArvoreBalanceada (TNoA *raiz, int v[], int inicio, int fim) {
+TNoA* criaArvoreBalanceada (TNoA *raiz, int v[], int inicio, int fim) {
     if (inicio <= fim) {
         int meio = (inicio + fim) / 2;
         raiz = insere (raiz, v[meio]);
@@ -89,12 +63,26 @@ void criaArvoreBalanceada (TNoA *raiz, int v[], int inicio, int fim) {
     }
 }
 
+void imprime(TNoA *raiz, int tab) {
+    for (int i = 0; i < tab; i++) {
+        printf("-");
+    }
+    if (raiz != NULL) {
+        printf("%d\n", raiz->chave);
+        imprime(raiz->esq, tab + 4);
+        printf("\n");
+        imprime(raiz->dir, tab + 4);
+    } else {
+        printf("vazio");
+    }
+}
+
 int main (void) {
     int tam = 7;
     int v[] = {150, 300, 400, 500, 700, 800, 900};
     TNoA *raiz;
     raiz = NULL;
-    criaArvoreBalanceada(raiz, v, 0, tam - 1);
+    raiz = criaArvoreBalanceada(raiz, v, 0, tam - 1);
     imprime(raiz, 0);
     
     return 0;
