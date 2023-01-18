@@ -56,6 +56,10 @@ void posOrdem(TNoA *a){
       }
 }
 
+// Implementar
+void profundidadePilha();
+void larguraFila();
+
 int main(void) {
     TNoA *raiz;
     raiz = criaNo('A');
